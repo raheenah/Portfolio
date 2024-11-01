@@ -1,0 +1,365 @@
+:root {
+  --light_text: #ad7699;
+  --line: #d46bad;
+  --background3: #5c374e;
+  --dark_text: #16051d;
+  --bacground: #3d2835;
+  --background2: #4f2f43;
+  --back_to_top: #4c1b39;
+  --light: #c07ca6;
+  --medium: #7a3961;
+  --shadow: #240116;
+  --button: #965f81;
+  --cardback: #eeabd4;
+  --button_hover: #c07ca6;
+  --black: #000000;
+  --answer: #a3688c;
+--light_text: #b3d4e0;       /* Light pastel blue for text */
+--line: #a0c4db;             /* Soft blue for lines */
+--background3: #4e4c72;      /* Deep muted blue-gray */
+--dark_text: #122e5b;        /* Dark navy for strong contrast text */
+--background: #1c2a4a;       /* Deep navy background */
+--background2: #2a3b59;      /* Lighter blue-gray */
+--back_to_top: #1b2e4b;      /* Darker blue for UI elements */
+--light: #89aee0;            /* Light vibrant blue */
+--medium: #4a91e2;           /* Bright medium blue */
+--shadow: #0e2231f7;           /* Dark blue-gray for shadows */
+--button: #6cb4e4;           /* Bright pastel blue for buttons */
+--cardback: #c7e3f7;         /* Very light blue for cards */
+--button_hover: #8ec3e8e1;     /* Soft blue hover for buttons */
+--black: #000000;            /* Black as-is */
+--answer: #7a9dcf;           /* Mid-tone blue for answers */
+/* Mid-tone blue for answers */
+}
+.image_background {
+   width: 20rem;
+  height: 20rem;
+  display: flex;
+  background: #240116;
+  border-radius: 50%;
+  justify-content: center;
+  justify-self: center;
+  align-self: center;
+  align-content: center;
+  background: linear-gradient(
+    270deg,
+       #a885e8,
+    #b392f5,
+    #d9aaf7,
+    #c296f2,
+    #8f75d8,
+    #6b5dd3,
+    #9d7fe8,
+    #b28dff,
+    #6b5dd3,
+    #9d7fe8,
+    #a885e8,
+    #b392f5,
+    #d9aaf7,
+    #c296f2,
+    #8f75d8,
+    #5c4bb8
+  );
+  background-size: 800% 800%;
+  animation: gradientAnimation 10s ease infinite, pulse 5s ease-in-out infinite;
+}
+
+@keyframes gradientAnimation {
+  0% {
+    background-position: 0% 50%;
+  }
+  20% {
+    background-position: 25% 50%;
+  }
+  40% {
+    background-position: 50% 60%;
+  }
+  60% {
+    background-position: 75% 40%;
+  }
+  80% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+/* Optional Pulse Animation (if needed) */
+@keyframes pulse {
+  0% {
+    transform: scale(1); /* Original size */
+  }
+  50% {
+    transform: scale(1.1); /* Slightly larger */
+  }
+  100% {
+    transform: scale(1); /* Back to original size */
+  }
+}
+
+.profile img {
+  width: 80%;
+  height: 80%;
+  object-fit: cover;
+  border-radius: 50%;
+  align-self: center;
+  justify-self: center;
+}
+
+@keyframes slide-in-left {
+  0% {
+    transform: translateX(100%); /* Start off-screen */
+    opacity: 0; /* Start invisible */
+  }
+  100% {
+    transform: translateX(0); /* End at original position */
+    opacity: 1; /* End fully visible */
+  }
+}
+
+/* Apply animation */
+.slide-in-left {
+  animation: slide-in-left 2s ease-out forwards; /* Animation duration and easing */
+}
+/* Custom CSS for fade-in from bottom animation */
+@keyframes fade-in-up {
+  0% {
+    transform: translateY(800px); /* Start below */
+    opacity: 0; /* Start invisible */
+  }
+  100% {
+    transform: translateY(0); /* End at original position */
+    opacity: 1; /* End fully visible */
+  }
+}
+
+/* Apply animation */
+.fade-in-up {
+  /* visibility: hidden; */
+  opacity: 0;
+  animation: fade-in-up 2s ease-out 2s forwards; /* Animation duration and easing */
+}
+.fade-in-up[style*="animation"] {
+  visibility: visible; /* Make it visible when animation begins */
+}
+
+
+
+/* nav {
+  color: var(--black);
+  padding: 10px;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  box-sizing: border-box;
+  width: 100%;
+  margin: 0;
+  padding-block: 8px;
+  /* padding-left: 20px;
+  padding-right: 20px; 
+}
+nav ul {
+  list-style-type: none;
+  display: flex;
+  flex-wrap: nowrap;
+  overflow: hidden;
+  align-items: center;
+  margin: 0;
+  padding: 0;
+  width: 100%;
+}
+
+nav ul a {
+  text-decoration: none;
+  color: var(--light_text);
+  margin-inline-start: 3px;
+}
+nav ul li:first-child {
+  margin-inline-end: auto;
+  background-color: var(--button);
+  padding-block: 30px;
+  font-size: 1.2rem;
+  color: var(--dark_text) !important;
+  font-weight: bolder;
+  padding-inline: 25px;
+  border-radius: 50px;
+}
+nav ul li:first-child a {
+  color: inherit; 
+}
+nav ul li:first-child:hover {
+  background-color: var(--button_hover);
+  box-shadow: 0px 1px 10px var(--shadow);
+}
+
+nav ul li {
+  margin-inline-start: 40px;
+  font-size: 1rem;
+  font-weight: 600;
+}
+nav ul li:nth-child(3) {
+  margin-inline-end: 20px;
+}
+nav ul li:nth-child(3):hover,
+nav ul li:nth-child(2):hover {
+  font-size: 1.2rem;
+}
+.profile_grid {
+  display: grid;
+  grid-template-columns: 3fr 3fr;
+  justify-items: center;
+  align-items: center;
+}
+.profile img {
+  width: 80%;
+  height: 80%;
+  object-fit: cover;
+  border-radius: 50%;
+  align-self: center;
+  justify-self: center;
+}
+.image_background {
+  width: 300px;
+  height: 300px;
+  display: flex;
+  background: #240116;
+  border-radius: 50%;
+  justify-content: center;
+  justify-self: center;
+  align-self: center;
+  align-content: center;
+  background: linear-gradient(
+    270deg,
+    #3f0c60,
+    /* Dark purple */
+#6d0f72,
+    /* Dark pink */ /* Dark pink */ #8e2b6b,
+    /* Medium dark pink */ #6e2c77,
+    /* Purple with pink tones */ #9c3f8c,
+    /* Medium pink */ #d24d77,
+    /* Bright dark pink */ #b03a6b,
+    /* Darker pink */ #7d3f8c,; /* Dark purple * #4a235a
+  );
+  background-size: 800% 800%;
+  animation: gradientAnimation 10s ease infinite;
+}
+@keyframes gradientAnimation {
+  0% {
+    background-position: 0% 50%;
+  }
+  20% {
+    background-position: 25% 50%;
+  }
+  40% {
+    background-position: 50% 50%;
+  }
+  60% {
+    background-position: 75% 50%;
+  }
+  80% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+.profile_left {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: start;
+  padding: 80px;
+}
+.profile_left h1 {
+  font-size: 3rem;
+  color: white;
+  font-weight: 600;
+  margin-block-start: auto;
+}
+.profile_left h2 {
+  font-size: 1.3rem;
+  color: var(--light_text);
+  font-weight: 200;
+}
+.location img {
+  width: 30px;
+  height: 30px;
+}
+.location {
+  display: flex;
+  padding-block-start: 40px;
+  gap: 30px;
+}
+.location p {
+  font-size: 1rem;
+  color: var(--light_text);
+  font-weight: 200;
+}
+@media only screen and (max-width: 420px) {
+
+.profile_right {
+  margin-block-start: -50px;
+}
+  
+  .profile_left h1 {
+    font-size: 1.5rem;
+  }
+
+  .profile_left h2 {
+    font-size: 0.7rem;
+  }
+.profile_grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  justify-items:center;
+  align-items: center;
+}
+.location {
+  display: flex;
+  margin-block-start: -50px;
+  gap: 30px;
+}
+.profile{
+  margin-block-start: -65px;
+}
+  .profile img {
+    width: 70%;
+    height: 70%;
+  }
+  .profile img {
+  width: 80%;
+  height: 80%;
+  object-fit: cover;
+  border-radius: 50%;
+  align-self: center;
+  justify-self: center;
+}
+.image_background {
+  width: 80%;
+  height: 300px;
+  display: flex;
+  background: #240116;
+  border-radius: 50%;
+  justify-content: center;
+  justify-self: center;
+  align-self: center;
+  align-content: center;
+  background: linear-gradient(
+    270deg,
+    #3f0c60,
+    #6d0f72,
+    #8e2b6b,
+    #6e2c77,
+ #9c3f8c,
+   #d24d77,
+     #b03a6b,
+    #7d3f8c,
+    #4a235a 
+  );
+  background-size: 800% 800%;
+  animation: gradientAnimation 10s ease infinite;
+}
+
+
+} */
